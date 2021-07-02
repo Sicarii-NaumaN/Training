@@ -5,6 +5,14 @@ import (
 	"reflect"
 )
 
+func Hash_func(data string, m int) {
+	hash := 0
+	for i := range data {
+		hash = (hash * 2013 + int(data[i])) % m
+	}
+}
+
+
 // Инициализация из имеющегося среза
 func NewSet(elems []string) *Set {
 	check := make(map[interface{}]bool)
